@@ -1,0 +1,153 @@
+.login-top-bar-container {
+   .login-toolbar {
+      .lit-logo {
+         cursor: pointer;
+         height: 3vh;
+         margin-left: clamp(0px, 16%, 50%);
+      }
+      min-height: 5.5vh;
+   }
+}
+
+.login-content {
+   .paper {
+      .login-title {
+         position: absolute;
+         font-weight: 500;
+         font-style: normal;
+         font-size: 36px;
+         top: 40%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+      .new-text {
+         position: absolute;
+         top: 75%;
+         transform: translate(-50%, -50%);
+         left: 50%;
+         font-size: 22px;
+         font-style: normal;
+         font-weight: 10;
+      }
+      .new-text > a {
+         text-decoration: none;
+         color: #337ab7;
+      }
+      .new-text > a:hover {
+         color: #23527c;
+      }
+      height: 100%;
+      width: 100%;
+      position: relative;
+   }
+
+   .login-center {
+    .MuiDivider-vertical{
+        height: 33vh;
+    }
+      .center-left {
+         .text-description {
+            font-size: 15px;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.5rem;
+            padding-right: 15%;
+         }
+         .panel {
+            .panel-text,
+            .panel-field {
+               display: flex;
+               flex-direction: column;
+            }
+            .panel-text {
+               .email-label {
+                  margin-bottom: 2rem;
+                  margin-top: 1.25rem;
+               }
+               .pass-label {
+                  margin-top: 0.5rem;
+               }
+               width: 6rem;
+            }
+            .panel-field {
+               .MuiInputBase-input,
+               .MuiOutlinedInput-input {
+                  height: 0.15rem;
+               }
+               .Textfield {
+                  margin-top: 0.75rem;
+                  margin-bottom: 0.5rem;
+               }
+               width: 65%;
+            }
+            display: flex;
+            font-size: 13px;
+         }
+         .bottom-panel {
+            .remember-text {
+               position: relative;
+               text-decoration: none;
+               font-size: 15px;
+               color: #337ab7;
+               padding-top: 0.5rem;
+            }
+            .remember-text:hover {
+               color: #23527c;
+            }
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+         }
+         .button-panel {
+            .MuiButton-contained {
+               color: white;
+               width: 8.5rem;
+               height: 2.75rem;
+               margin-top: 1rem;
+            }
+            .MuiButton-contained:hover {
+               background-color: #e06522;
+            }
+            width: 80%;
+            display: flex;
+            justify-content: center;
+         }
+         width: 50%;
+      }
+      .center-right {
+          .MuiButton-contained {
+            color: white;
+             height: 3.5rem;
+             margin-top: 1rem;
+          }
+          .MuiButton-startIcon>*:nth-of-type(1){
+            font-size: 30px;
+          }
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 40%;
+      }
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+   }
+
+   .login-bottom{
+    a{
+        text-decoration: none;
+        color: #337ab7;
+    }
+    a:hover{
+        color: #23527c;
+    }
+    margin: 100px 5% 0;
+    font-size: 13px;
+   }
+
+   height: 30vh;
+   background-color: white;
+}
