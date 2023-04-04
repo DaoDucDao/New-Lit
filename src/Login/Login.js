@@ -14,13 +14,12 @@ import {
    Button,
    Stack,
    Divider,
-   Snackbar,
-   Alert,
 } from '@mui/material';
 import ColorTheme from '../common/ColorTheme';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import GoogleIcon from '@mui/icons-material/Google';
 import { LIT_ValidLength } from '../utils/validate';
+import './../common/scss/common.scss'
 
 function Login(props, ref) {
    const defaultUser = {
@@ -118,10 +117,10 @@ function Login(props, ref) {
    return (
       <Container>
          {/* topbar */}
-         <div className='login-top-bar-container'>
+         <div className='top-bar-container'>
             <ThemeProvider theme={ColorTheme}>
                <AppBar position='fixed' color='shadow'>
-                  <Toolbar className='login-toolbar'>
+                  <Toolbar className='toolbar'>
                      <img src='https://cm.litextension.com/images/logo.svg' className='lit-logo' />
                   </Toolbar>
                </AppBar>

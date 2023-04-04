@@ -1,0 +1,10 @@
+.top-bar-container{
+   .toolbar{
+      .lit-logo {
+         cursor: pointer;
+         height: 3vh;
+         margin-left: clamp(0px, 16%, 50%);
+      }
+   min-height: 5.5vh;
+   }
+}
