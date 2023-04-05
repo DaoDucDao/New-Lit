@@ -4,7 +4,12 @@
          cursor: pointer;
          height: 3vh;
          margin-left: clamp(0px, 16%, 50%);
+         z-index: 10;
       }
    min-height: 5.5vh;
    }
+}
+
+.font-bold{
+   font-weight: 500;
 }

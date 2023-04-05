@@ -1,0 +1,144 @@
+body {
+   padding: 0;
+   margin: 0;
+}
+
+.migration-container {
+   .migration-center {
+      .migration-left {
+         .header-panel {
+            h1 {
+               font-size: 30px;
+               line-height: 1.5em;
+               font-weight: 500;
+               margin-top: 3rem;
+            }
+            .create-migration-button {
+               position: absolute;
+               right: 5%;
+               color: white;
+               background-color: #f26f27;
+               line-height: 3em;
+               width: 25%;
+               text-align: center;
+               top: 5vh;
+               font-weight: 450;
+               border-radius: 24px;
+               cursor: pointer;
+            }
+            .create-migration-button:hover {
+               background-color: #e06522;
+            }
+            display: flex;
+            width: 100%;
+            position: relative;
+         }
+         .MuiDivider-root {
+            width: 98%;
+            margin: 1.25rem 0 1.25rem;
+         }
+         .migration-list {
+            .migration-detail-header:hover {
+               cursor: pointer;
+               color: #337ab7;
+            }
+            .migration-detail-panel {
+               .arrow-icon {
+                  color: #dedede;
+                  font-size: 3rem;
+               }
+               .migration-from {
+                  display: flex;
+                  flex-direction: column;
+               }
+               .migration-to {
+                  display: flex;
+                  flex-direction: column;
+               }
+               .image-migration {
+                  width: 7rem;
+                  cursor: pointer;
+               }
+               a {
+                  text-decoration: none;
+                  color: #337ab7;
+                  font-size: 13px;
+                  margin-top: 1rem;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  max-width: 18rem;
+                  overflow: hidden;
+               }
+               a:hover {
+                  color: #23527c;
+               }
+               .continue-migration-button {
+                  font-size: 1em;
+                  line-height: 35px;
+                  background-color: #f26f27;
+                  color: white;
+                  cursor: pointer;
+                  width: 12em;
+                  border-radius: 17px;
+                  text-align: center;
+                  position: absolute;
+                  right: 5%;
+               }
+               .continue-migration-button:hover {
+                  background-color: #e06522;
+               }
+               position: relative;
+               margin-top: 1.5rem;
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+            }
+         }
+
+         height: 100%;
+         width: 70%;
+         display: flex;
+         flex-direction: column;
+         position: relative;
+      }
+
+      .migration-right {
+         .migration-instruction-panel {
+            .instruction-label {
+               display: flex;
+               align-items: center;
+               padding-bottom: .5rem;
+               font-size: 14px ;
+            }
+            .instruction-title {
+               display: block;
+               margin-top: 1rem;
+               font-size: 14px;
+            }
+            .instruction-detail {
+               display: block;
+               margin-top: 1rem;
+               font-size: 13px;
+               line-height: 20px;
+            }
+            background: #f6f6f6;
+            padding: 1rem;
+         }
+         height: 100%;
+         width: 20%;
+         display: flex;
+         flex-direction: column;
+         margin-left: 2.5%;
+         margin-top: 5vh;
+      }
+      top: 20%;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+   }
+
+   height: calc(100% - 5.5vh);
+   position: fixed;
+   top: 5.5vh;
+}

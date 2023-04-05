@@ -70,13 +70,6 @@ function LIT_Menu(props, ref) {
       );
    };
 
-   const applyProps = (i) => {
-      return {
-         id: `simple-tab-${i}`,
-         'aria-controls': `simple-tabpanel-${i}`,
-      };
-   };
-
    const renderCenter = () => {
       switch (index) {
          case 0:
@@ -105,9 +98,9 @@ function LIT_Menu(props, ref) {
                            onChange={(e, newValue) => setIndex(() => newValue)}
                            indicatorColor='none'
                         >
-                           <Tab label='My Migrations' {...applyProps(0)} />
-                           <Tab label='Create Migration' {...applyProps(1)} />
-                           <Tab label='All-in-one Migration' {...applyProps(2)} />
+                           <Tab label='My Migrations' />
+                           <Tab label='Create Migration' />
+                           <Tab label='All-in-one Migration' />
                            <Tab
                               label={
                                  <label
