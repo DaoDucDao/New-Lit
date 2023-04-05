@@ -1,0 +1,54 @@
+.menu-tab-bar {
+   .toolbar {
+      .right-toolbar {
+         .MuiTab-root {
+            color: rgb(172, 172, 172);
+         }
+         .MuiTab-root:hover {
+            color: white;
+         }
+         .Mui-selected {
+            color: white !important;
+            background-color: #0d0d0d;
+         }
+         .panel-label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+         }
+         position: fixed;
+         right: 0;
+      }
+   }
+}
+
+.MuiMenu-paper {
+   .MuiMenuItem-root {
+      display: flex;
+      justify-content: center;
+   }
+   position: absolute;
+}
+
+.menu-service {
+   .MuiMenu-paper {
+      top: 5.5vh !important;
+      left: auto !important;
+      right: 17.5vh !important;
+   }
+}
+.menu-profile {
+   .MuiMenu-paper {
+      top: 5.5vh !important;
+      left: auto !important;
+      right: 0px !important;
+      width: 20vh
+   }
+}
+
+.menu-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
