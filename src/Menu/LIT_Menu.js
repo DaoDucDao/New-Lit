@@ -15,11 +15,14 @@ import './../common/scss/common.scss';
 import { TabPanel, TabContext } from '@mui/lab';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LIT_My_Migration from './My Migrations/LIT_My_Migration';
+import LIT_Create_Migration from './../Menu/Create Migration/LIT_Create_Migration'
+import LIT_Migration_Detail from './Migration Detail/LIT_Migration_Detail';
 
 function LIT_Menu(props, ref) {
    const [index, setIndex] = useState(0);
    const [openService, setOpenService] = useState(false);
    const [openProfile, setOpenProfile] = useState(false);
+   const [ detail, setDetail] = useState(null)
 
    const renderMenu = () => {
       return (
@@ -73,17 +76,29 @@ function LIT_Menu(props, ref) {
    const renderCenter = () => {
       switch (index) {
          case 0:
-            return <LIT_My_Migration />;
+            return <LIT_My_Migration toCreate={toCreate} showDetail={showDetail}/>;
          case 1:
-            return 'Create migration';
+            return <LIT_Create_Migration/>;
 
          case 2:
             return 'All-in-one Migration';
+
+         case -1:
+            return <LIT_Migration_Detail detail={detail}/>;
 
          default:
             break;
       }
    };
+
+   const toCreate = () => {
+      setIndex(1)
+   }
+
+   const showDetail = (detail) =>{
+      setIndex(-1)
+      setDetail(() => detail)
+   }
 
    return (
       <Container>

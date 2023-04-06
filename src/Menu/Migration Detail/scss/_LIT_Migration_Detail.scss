@@ -1,0 +1,108 @@
+body {
+   padding: 0;
+   margin: 0;
+}
+
+.detail-container {
+   .header-panel {
+      position: relative;
+      top: 10%;
+      width: 80%;
+      left: 10%;
+      border-bottom: 1px solid #e0e0e0;
+   }
+   .information-panel {
+      a {
+         text-decoration: none;
+         color: #337ab7;
+         font-size: 13px;
+         margin-top: 1rem;
+      }
+      a:hover {
+         color: #23527c;
+      }
+      .migration-from {
+         a {
+            display: flex;
+            justify-content: flex-end;
+         }
+         display: flex;
+         flex-direction: column;
+      }
+      .migration-to {
+         display: flex;
+         flex-direction: column;
+      }
+      width: 80%;
+      position: relative;
+      top: 14%;
+      left: 8%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+   }
+   .time-line-detail {
+      width: 80%;
+      position: relative;
+      top:14%;
+      left: 10%;
+      margin-bottom: 2rem;
+   }
+   .migration-confirmation {
+      .confirmation-note {
+         background: #e2ffe3;
+         margin-top: 1.5rem;
+         margin-bottom: 1.5rem;
+         padding: 1.25rem;
+      }
+      .continue-panel {
+         .continue-migration-button {
+            font-size: 1em;
+            line-height: 35px;
+            background-color: #f26f27;
+            color: white;
+            cursor: pointer;
+            width: 12em;
+            border-radius: 17px;
+            text-align: center;
+         }
+         .continue-migration-button:hover {
+            background-color: #e06522;
+         }
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         margin-bottom: 1.5rem;
+      }
+
+      position: relative;
+      width: 80%;
+      left: 10%;
+      top: 12.5%;
+      border: 1px solid #e0e0e0;
+      padding: 2rem;
+   }
+   .cost-header {
+      position: relative;
+      top: 15%;
+      left: 10%;
+      font-family: 'Roboto';
+      font-weight: 500;
+   }
+   .migration-cost {
+      .MuiTypography-root{
+         display: flex;
+         justify-content: flex-end;
+         width: 15rem;
+      }
+      width: 85%;
+      position: relative;
+      left: 10%;
+      top: 15%;
+      margin-bottom: 12.5rem;
+   }
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+// #f8f9fa

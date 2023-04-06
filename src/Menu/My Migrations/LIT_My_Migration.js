@@ -3,6 +3,7 @@ import './scss/LIT_My_Migration.scss';
 import './../../common/scss/common.scss';
 import { Box, Container, Divider } from '@material-ui/core';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import LIT_Advertise from '../../common/LIT_Advertise';
 
 function LIT_My_Migration(props, ref) {
    const defaultMigration = {
@@ -78,6 +79,10 @@ function LIT_My_Migration(props, ref) {
 
    const [instruction, setInstruction] = useState(defaultIntructions.create);
 
+   const showDetail = (migration) => {
+      props.showDetail(migration)
+   }
+
    return (
       <Container className='migration-container'>
          <div className='migration-center'>
@@ -89,6 +94,7 @@ function LIT_My_Migration(props, ref) {
                   <div
                      className='create-migration-button'
                      onMouseOver={() => setInstruction(() => defaultIntructions.create)}
+                     onClick={() => props.toCreate()}
                   >
                      Create New Migration
                   </div>
@@ -104,6 +110,7 @@ function LIT_My_Migration(props, ref) {
                            className='migration-detail-header'
                            style={{ fontSize: '18px', fontWeight: '400' }}
                            onMouseOver={() => setInstruction(() => defaultIntructions.detail)}
+                           onClick={() => showDetail(migration)}
                         >
                            <span className='font-bold' style={{ fontSize: '16px' }}>
                               Migration ID: {migration.id}
@@ -158,21 +165,14 @@ function LIT_My_Migration(props, ref) {
                         Instructions
                      </label>
                      <Divider />
-                     
+
                      <label className='instruction-title font-bold'> {instruction?.title}</label>
                      <label className='instruction-detail'>{instruction?.detail}</label>
                   </Box>
                </div>
-
+               
                {/* migration-advertise */}
-               <div className='migration-advertise-panel'>
-                  <a href='https://shopify.pxf.io/jWxqdZ' target='_blank'>
-                     <img
-                        src='https://cm.litextension.com/images/cm-square-banner.png'
-                        style={{ width: '100%', marginTop: '2.5vh' }}
-                     />
-                  </a>
-               </div>
+               <LIT_Advertise />
             </div>
          </div>
       </Container>
