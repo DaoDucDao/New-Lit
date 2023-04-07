@@ -20,13 +20,11 @@ import LIT_Migration_Detail from './Migration Detail/LIT_Migration_Detail';
 import LIT_My_Profile from './My Profile/LIT_My_Profile';
 
 function LIT_Menu(props, ref) {
-   const {user} = props
+   const { user } = props;
    const [index, setIndex] = useState(0);
    const [openService, setOpenService] = useState(false);
    const [openProfile, setOpenProfile] = useState(false);
    const [detail, setDetail] = useState(null);
-
-   console.log(index);
 
    const renderMenu = () => {
       const openProfileHandle = () => {
@@ -96,7 +94,7 @@ function LIT_Menu(props, ref) {
             return <LIT_Migration_Detail detail={detail} />;
 
          case -2:
-            return <LIT_My_Profile/>;
+            return <LIT_My_Profile user={user} />;
 
          default:
             break;
@@ -144,7 +142,8 @@ function LIT_Menu(props, ref) {
                                     className='panel-label'
                                     onClick={() => setOpenProfile((current) => !current)}
                                  >
-                                    {user.email}<ArrowDropDownIcon />
+                                    {user.email}
+                                    <ArrowDropDownIcon />
                                  </label>
                               }
                            />

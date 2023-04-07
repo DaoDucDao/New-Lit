@@ -105,8 +105,8 @@ body {
       .Mui-disabled {
          background-color: #f8f9fa;
       }
-      .MuiTableCell-root{
-         padding: .25rem 16px;
+      .MuiTableCell-root {
+         padding: 0.25rem 16px;
          font-size: 1rem;
       }
       width: 90%;
@@ -114,20 +114,20 @@ body {
       left: 10%;
       top: 15%;
    }
-   .migration-history-panel{
-      .migration-history-button{
-         margin-top: .5rem;
+   .migration-history-panel {
+      .migration-history-button {
+         margin-top: 0.5rem;
          width: 11rem;
          background-color: #f26f27;
          color: white;
-         padding: .4rem;
+         padding: 0.4rem;
          border-radius: 16px;
          display: flex;
          justify-content: center;
          cursor: pointer;
          left: 500px;
       }
-      .migration-history-button:hover{
+      .migration-history-button:hover {
          background-color: #e06522;
       }
       display: flex;
@@ -137,14 +137,15 @@ body {
       top: 15%;
       left: 10%;
    }
-   .migration-history{
+   .migration-history {
       width: 90%;
       position: relative;
       top: 15%;
       left: 10%;
+      animation: slidedown 2s ease-in-out;
    }
-   .migration-log{
-      .migration-log-detail{
+   .migration-log {
+      .migration-log-detail {
          width: 100%;
          border: 1px solid #e0e0e0;
          height: 300px;
@@ -159,4 +160,26 @@ body {
    overflow-y: auto;
    overflow-x: hidden;
 }
-// #f8f9fa
+
+@keyframes slidedown {
+   0% {
+      opacity: 0;
+      max-height: 0;
+   }
+   25% {
+      opacity: 0.25;
+      max-height: 25%;
+   }
+   50% {
+      opacity: 0.5;
+      max-height: 50%;
+   }
+   75% {
+      opacity: 0.75;
+      max-height: 75%;
+   }
+   100% {
+      opacity: 1;
+      max-height: 100%;
+   }
+}
