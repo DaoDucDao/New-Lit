@@ -15,16 +15,25 @@ import './../common/scss/common.scss';
 import { TabPanel, TabContext } from '@mui/lab';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LIT_My_Migration from './My Migrations/LIT_My_Migration';
-import LIT_Create_Migration from './../Menu/Create Migration/LIT_Create_Migration'
+import LIT_Create_Migration from './../Menu/Create Migration/LIT_Create_Migration';
 import LIT_Migration_Detail from './Migration Detail/LIT_Migration_Detail';
+import LIT_My_Profile from './My Profile/LIT_My_Profile';
 
 function LIT_Menu(props, ref) {
+   const {user} = props
    const [index, setIndex] = useState(0);
    const [openService, setOpenService] = useState(false);
    const [openProfile, setOpenProfile] = useState(false);
-   const [ detail, setDetail] = useState(null)
+   const [detail, setDetail] = useState(null);
+
+   console.log(index);
 
    const renderMenu = () => {
+      const openProfileHandle = () => {
+         setOpenProfile((current) => !current);
+         setIndex(() => -2);
+      };
+
       return (
          <React.Fragment>
             <Menu
@@ -57,7 +66,7 @@ function LIT_Menu(props, ref) {
                }}
                className='menu-profile'
             >
-               <MenuItem onClick={() => setOpenProfile((current) => !current)}>My Profile</MenuItem>
+               <MenuItem onClick={() => openProfileHandle()}>My Profile</MenuItem>
                <MenuItem onClick={() => setOpenProfile((current) => !current)}>
                   Top up balance
                </MenuItem>
@@ -76,15 +85,18 @@ function LIT_Menu(props, ref) {
    const renderCenter = () => {
       switch (index) {
          case 0:
-            return <LIT_My_Migration toCreate={toCreate} showDetail={showDetail}/>;
+            return <LIT_My_Migration toCreate={toCreate} showDetail={showDetail} />;
          case 1:
-            return <LIT_Create_Migration/>;
+            return <LIT_Create_Migration />;
 
          case 2:
             return 'All-in-one Migration';
 
          case -1:
-            return <LIT_Migration_Detail detail={detail}/>;
+            return <LIT_Migration_Detail detail={detail} />;
+
+         case -2:
+            return <LIT_My_Profile/>;
 
          default:
             break;
@@ -92,13 +104,13 @@ function LIT_Menu(props, ref) {
    };
 
    const toCreate = () => {
-      setIndex(1)
-   }
+      setIndex(1);
+   };
 
-   const showDetail = (detail) =>{
-      setIndex(-1)
-      setDetail(() => detail)
-   }
+   const showDetail = (detail) => {
+      setIndex(-1);
+      setDetail(() => detail);
+   };
 
    return (
       <Container>
@@ -132,7 +144,7 @@ function LIT_Menu(props, ref) {
                                     className='panel-label'
                                     onClick={() => setOpenProfile((current) => !current)}
                                  >
-                                    AccountName <ArrowDropDownIcon />
+                                    {user.email}<ArrowDropDownIcon />
                                  </label>
                               }
                            />

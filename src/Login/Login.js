@@ -22,6 +22,8 @@ import { LIT_ValidLength } from '../utils/validate';
 import './../common/scss/common.scss'
 
 function Login(props, ref) {
+   const {afterSubmit} = props
+
    const defaultUser = {
       email: null,
       password: null,
@@ -50,9 +52,9 @@ function Login(props, ref) {
 
    const submit = () => {
       let isValid = validate([]);
-      if (isValid.length === 0) 
-      try {
-      } catch (error) {}
+      if (isValid.length === 0) afterSubmit(user)
+      // try {
+      // } catch (error) {}
    };
 
    const applyChange = (prop, val) => {
@@ -215,7 +217,6 @@ function Login(props, ref) {
                         <Button
                            variant='contained'
                            color='google_color'
-                           href='redirect/google'
                            startIcon={<GoogleIcon />}
                         >
                            sign in with google

@@ -1,13 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './../../common/scss/common.scss';
 import './scss/_LIT_Migration_Detail.scss';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import LIT_Time_Line from '../Create Migration/LIT_Time_Line';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
+import {
+   Accordion,
+   AccordionSummary,
+   AccordionDetails,
+   Typography,
+   Table,
+   TableHead,
+   TableRow,
+   TableCell,
+   TableBody,
+} from '@mui/material';
 
 function LIT_Migration_Detail(props, ref) {
    const { detail } = props;
+
+   const draftTotal = [
+      { name: 'Categories', count: 0 },
+      { name: 'Products', count: 5 },
+      { name: 'Customers', count: 0 },
+      { name: 'Orders', count: 0 },
+      { name: 'Reviews', count: 0 },
+      { name: 'Pages', count: 0 },
+      { name: 'Coupons', count: 0 },
+   ];
+
+   const draftOptions = [
+      { name: 'Migrate recent data (adds new entities only)', price: 0 },
+      { name: 'Clear current data on Target Store before Migration	', price: 0 },
+      { name: 'Transfer images from Categories, Product descriptions to Target Store	)', price: 39 },
+      { name: 'Preserve Order IDs on Target Store	', price: 0 },
+      { name: 'Strip HTML from category, product names	', price: 0 },
+      { name: 'Create the 301 redirects on your target store after migration	', price: 19 },
+      { name: 'Migrate Source Store categories into Shopify Smart Collections', price: 0 },
+   ];
+
+   const [showHistory, setShowHistory] = useState(false);
+
    return (
       <div className='detail-container'>
          <div className='header-panel'>
@@ -71,6 +104,30 @@ function LIT_Migration_Detail(props, ref) {
                   <Typography>Total Entity :</Typography>
                   <Typography>{detail.totalEntity}</Typography>
                </AccordionSummary>
+
+               <AccordionDetails>
+                  <Table>
+                     <TableHead>
+                        <TableRow>
+                           <TableCell align='center'>Entity</TableCell>
+                           <TableCell align='center'>Count</TableCell>
+                        </TableRow>
+                     </TableHead>
+
+                     <TableBody>
+                        {draftTotal.map((total) => (
+                           <TableRow>
+                              <TableCell align='center' component='th'>
+                                 {total.name}
+                              </TableCell>
+                              <TableCell align='center' component='th'>
+                                 {total.count}
+                              </TableCell>
+                           </TableRow>
+                        ))}
+                     </TableBody>
+                  </Table>
+               </AccordionDetails>
             </Accordion>
 
             <Accordion>
@@ -78,6 +135,29 @@ function LIT_Migration_Detail(props, ref) {
                   <Typography>Additional Options:</Typography>
                   <Typography>{detail.additionalOption}</Typography>
                </AccordionSummary>
+               <AccordionDetails>
+                  <Table>
+                     <TableHead>
+                        <TableRow>
+                           <TableCell align='center'>Options</TableCell>
+                           <TableCell align='center'>Price</TableCell>
+                        </TableRow>
+                     </TableHead>
+
+                     <TableBody>
+                        {draftOptions.map((option) => (
+                           <TableRow>
+                              <TableCell align='center' component='th'>
+                                 {option.name}
+                              </TableCell>
+                              <TableCell align='center' component='th'>
+                                 {option.price}
+                              </TableCell>
+                           </TableRow>
+                        ))}
+                     </TableBody>
+                  </Table>
+               </AccordionDetails>
             </Accordion>
 
             <Accordion disabled>
@@ -86,6 +166,26 @@ function LIT_Migration_Detail(props, ref) {
                   <Typography>{detail.total}</Typography>
                </AccordionSummary>
             </Accordion>
+         </div>
+
+         <div className='migration-history-panel'>
+            <div
+               className='migration-history-button'
+               onClick={() => setShowHistory((current) => !current)}
+            >
+               Migration History
+            </div>
+         </div>
+
+         {showHistory && (
+            <div className='migration-history'>
+               <h2 style={{ fontWeight: '500', fontFamily: 'Roboto' }}>Migration History</h2>
+            </div>
+         )}
+
+         <div className='migration-log'>
+            <h2 style={{ fontWeight: '500', fontFamily: 'Roboto' }}>Migration Log</h2>
+            <div className='migration-log-detail'></div>
          </div>
       </div>
    );
